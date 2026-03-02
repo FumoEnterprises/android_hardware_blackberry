@@ -31,12 +31,12 @@ ndk::ScopedAStatus TouchKeypad::isEnabled(bool* _aidl_return) {
         return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
     }
 
-    *_aidl_return = value != "0\n";
+    *_aidl_return = value != "1\n";
     return ndk::ScopedAStatus::ok();
 }
 
 ndk::ScopedAStatus TouchKeypad::setEnabled(bool enable) {
-    if (!WriteStringToFile(enable ? "1" : "0", kTouchKeypadEnablePath, true)) {
+    if (!WriteStringToFile(enable ? "0" : "1", kTouchKeypadEnablePath, true)) {
         LOG(ERROR) << "Failed to write TouchKeypad state";
         return ndk::ScopedAStatus::fromExceptionCode(EX_SERVICE_SPECIFIC);
     }
