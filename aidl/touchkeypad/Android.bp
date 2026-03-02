@@ -1,0 +1,24 @@
+//
+// SPDX-FileCopyrightText: 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_binary {
+    name: "vendor.blackberry.touchkeypad-service",
+    vintf_fragments: ["vendor.blackberry.touchkeypad.xml"],
+    init_rc: ["vendor.blackberry.touchkeypad-service.rc"],
+    vendor: true,
+    relative_install_path: "hw",
+    srcs: [
+        "TouchKeypad.cpp",
+        "service.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "liblog",
+        "libbinder_ndk",
+        "libutils",
+        "vendor.blackberry.touchkeypad-V1-ndk",
+    ],
+
+}

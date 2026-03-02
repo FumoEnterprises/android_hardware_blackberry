@@ -1,0 +1,7 @@
+<manifest version="1.0" type="device">
+    <hal format="aidl">
+        <name>vendor.blackberry.touchkeypad</name>
+        <version>1</version>
+        <fqname>ITouchKeypad/default</fqname>
+    </hal>
+</manifest>
