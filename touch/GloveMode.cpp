@@ -30,8 +30,6 @@ Return<bool> GloveMode::isEnabled() {
     }
 
     android::base::Trim(val);
-    LOG(INFO) << "Enabled state raw: " << val;
-
     // not sure if this is needed but it seemed to fail without it
     if (val == "0x1") {
         return true;
@@ -48,7 +46,6 @@ Return<bool> GloveMode::setEnabled(bool enabled) {
         PLOG(ERROR) << "Failed to write glove_mode";
     }
 
-    LOG(INFO) << "NewEnabled state: " << enabled << " write_ok=" << ok;
     return ok;
 }
 
