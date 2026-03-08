@@ -19,7 +19,7 @@ namespace touch {
 namespace V1_0 {
 namespace implementation {
 
-const std::string kGloveModePath = "/sys/devices/soc/c178000.i2c/i2c-4/4-0070/input/input3/glove_mode";
+const std::string kGloveModePath = "/sys/devices/virtual/tp_device/tp_glove/glove_enable";
 
 Return<bool> GloveMode::isEnabled() {
     std::string val;
