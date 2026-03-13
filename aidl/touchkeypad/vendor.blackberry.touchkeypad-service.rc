@@ -1,7 +1,9 @@
 on init
     chown system system /sys/devices/touch_keypad/turn_off
+    # Disable capacitive touch by default
+    write /sys/devices/touch_keypad/turn_off 1
 
 service vendor.blackberry.touchkeypad-hal /vendor/bin/hw/vendor.blackberry.touchkeypad-service
     class hal
     user system
-    group system
+    group system input
